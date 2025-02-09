@@ -1,0 +1,74 @@
+.login-logo{
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-page{
+  background-color: black;
+  height: 100vh;
+}
+.login-heading{
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 23px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.login-form {
+    margin-top: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  label{
+    font-size: 15px;
+    font-style: normal;
+    color: #ccc;
+  }
+  #username, #email, #password{
+    color: #ccc;
+    font-size: 14px;
+  }
+  
+  .form-control {
+    width: 25%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .submit{
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .submit-btn {
+    width: 27%;
+    padding: 10px;
+    background-color: #1db954;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #1aa34a;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+  .redirect-to-register{
+    text-align: center;
+    margin-top: 2%;
+  }

@@ -1,0 +1,80 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+}
+.navbar-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+.search-icon{
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  font-size: 18px;
+  color: grey;
+}
+.navbar-search {
+  position: relative;
+}
+#search {
+  padding: 13px 35px;
+  width: 100%;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: rgb(34, 34, 34);
+  color: white;
+  font-size: 16px;
+  /* transition: width 0.3s ease; */
+}
+#search:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#search:focus {
+  border: 2px solid #d7e1db;
+}
+.premium {
+  background-color: white;
+  color: black;
+  border: none;
+  margin-left: 60px;
+  border-radius: 20px;
+  padding: 9px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.premium:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.house-icon {
+  background-color: rgb(34, 34, 34);
+  color: white;
+  font-size: 19px;
+  padding: 15px;
+  border-radius: 45%;
+}
+.search-install {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: gray;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.arrow{
+    border: 2px solid gray;
+    padding: 4px;
+    font-size: 11px;
+    border-radius: 50%;
+}
+.bell{
+    color: gray;
+    font-weight: bold;
+    margin-left: 15px;
+    font-size: 18px;
+}

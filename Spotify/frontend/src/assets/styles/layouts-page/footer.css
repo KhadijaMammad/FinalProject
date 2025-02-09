@@ -1,0 +1,69 @@
+.footer-heading {
+  color: white;
+}
+.footer-list {
+  text-decoration: none;
+  color: gray;
+  line-height: 1.8rem;
+  font-size: 15px;
+  /* opacity: 80%; */
+}
+.footer {
+  background-color: rgb(18, 18, 18);
+  border-radius: 15px;
+  padding: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.footer-page {
+  padding: 18px 0;
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.footer-lists {
+  display: flex;
+  flex-direction: column;
+}
+.footer-list:hover {
+  color: white;
+  text-decoration: underline;
+}
+.footer-icons {
+  display: flex;
+  gap: 15px;
+  color: white;
+  font-size: 18px;
+}
+.footer-icons i {
+  background-color: rgb(40, 40, 40);
+  padding: 13px;
+  border-radius: 50%;
+}
+.footer-icons i:hover {
+  background-color: grey;
+}
+.finish-copyright {
+  color: white;
+}
+.footer-finish{
+    font-size: 14px !important;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.finish-links{
+    display: flex;
+    gap: 15px;
+}
+.finish-list{
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+}
+.finish-list:hover{
+    color: white;
+}
