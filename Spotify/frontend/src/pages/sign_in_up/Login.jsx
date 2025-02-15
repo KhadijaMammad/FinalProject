@@ -3,7 +3,6 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import '../../assets/styles/signInUp/login.css'
-import Logo from "../../assets/images/spotify-logo-white.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -40,9 +39,6 @@ export default function Login() {
   return (
     <div className="container">
       <div className="login-page">
-        <div className="login-logo">
-          <img src={Logo} style={{ width: "60px" }} alt="Spotify Logo" />
-        </div>
         <div className="login-heading">
           <h1>Welcome back!</h1>
           <p>Login to your account</p>

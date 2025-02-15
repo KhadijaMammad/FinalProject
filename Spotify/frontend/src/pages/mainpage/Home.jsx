@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
     <div className="general-container">
-    <Layout/>
+    
     <div className="container">
       <div className="home-page">
 

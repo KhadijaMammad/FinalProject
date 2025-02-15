@@ -2,8 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 65px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 10px;
 }
+/* *{
+  background-color: rgb(34, 34, 34);
+} */
 .navbar-right {
   display: flex;
   justify-content: center;
@@ -77,4 +82,22 @@
     font-weight: bold;
     margin-left: 15px;
     font-size: 18px;
+}
+.navbar-lists{
+  display: flex;
+  gap: 15px;
+}
+.navbar-list{
+  text-decoration: none;
+  color: gray;
+  font-size: 16px;
+  cursor: pointer;
+}
+.navbar-list:hover{
+  color: white;
+  text-decoration: underline;
+  transition:  0.3s ease;
+}
+.navbar-list:active{
+  color: paleturquoise;
 }

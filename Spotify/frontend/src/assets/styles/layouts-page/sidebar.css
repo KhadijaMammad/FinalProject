@@ -1,0 +1,140 @@
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(18, 18, 18);
+    transition: width 0.3s ease-in-out;
+    color: gray;
+  }
+  
+  .sidebar.expanded {
+    width: 30%;
+  }
+  
+  .first-text {
+    font-size: 20px;
+    display: flex;
+    font-weight: bold;
+    gap: 4px;
+  }
+  
+  .first-text:hover {
+    color: white;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .sidebar-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+  }
+  
+  .playlist {
+    margin-top: 15px;
+    padding: 8px 13px;
+    background-color: rgb(34, 34, 34);
+    border-radius: 20px;
+    font-style: normal;
+    font-weight: bold;
+    border: none;
+    color: aliceblue;
+  }
+  
+  .fa-plus:hover,
+  .fa-arrow-right:hover,
+  .fa-magnifying-glass:hover {
+    color: white;
+  }
+  
+  .fa-magnifying-glass {
+    cursor: pointer;
+  }
+  
+  .search-input {
+    position: absolute;
+    left: 30px;
+    color: #ccc;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 0;
+    opacity: 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .search-input.active {
+    display: block;
+    width: 200px;
+    opacity: 1;
+  }
+  
+  /* Sidebar Search */
+  .sidebar-search {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  
+  /* Recents Sort */
+  .sort-lists {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  .sort-lists.active {
+    display: flex;
+  }
+  
+  .sort-lists p {
+    color: gray;
+    font-size: 14px;
+    margin: 5px 0;
+    cursor: pointer;
+  }
+  
+  .sort-lists p:hover {
+    color: white;
+  }
+  
+  /* Music Click */
+  .music-click {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .music-click.active {
+    display: block;
+  }
+  
+  .click-first,
+  .click-second {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: gray;
+  }
+  
+  .click-first:hover,
+  .click-second:hover {
+    color: white;
+  }
+  .sidebar-sorts:hover{
+    color: white;
+  }

@@ -1,0 +1,47 @@
+.premium-card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  margin-top: 5%;
+}
+.premium-card {
+    height: 270px;
+  width: 300px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: rgb(30, 30, 30);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.card-body{
+    margin-top: 15px;
+}
+.card-name{
+    color: plum;
+}
+.card-price{
+    font-weight: bolder;
+    color: gray;
+    line-height: 3rem;
+}
+.card-info{
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 35px;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgb(204, 164, 204);
+    margin: 5px 0;
+}
+.card-description{
+    text-align: center;
+    margin-top: 10px;
+    color: gray;
+    font-size: 10px;
+}

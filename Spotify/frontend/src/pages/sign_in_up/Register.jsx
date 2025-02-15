@@ -3,7 +3,6 @@ import {Formik, Field, Form, ErrorMessage} from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import "../../assets/styles/signInUp/register.css";
-import Logo from "../../assets/images/spotify-logo-white.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
@@ -46,9 +45,6 @@ export default function Register() {
     <>
       <div className="container">
         <div className="register-page">
-          <div className="register-logo">
-            <img src={Logo} style={{width: "60px"}} />
-          </div>
           <div className="register-heading">
             <h1>
               Sign up to
