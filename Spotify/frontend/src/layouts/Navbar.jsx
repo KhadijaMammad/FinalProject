@@ -1,35 +1,54 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import "../assets/styles/layouts-page/navbar.css";
-import { Link } from "react-router-dom";
-
+import {Link} from "react-router-dom";
+import {Menu, Close} from "@mui/icons-material";
+import {SearchContext} from "../contexts/SearchContext";
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const {searchItem, setSearchItem} = useContext(SearchContext);
+
   return (
     <>
       <div className="container">
         <div className="navbar">
           <div className="navbar-left">
-            <ul className="navbar-lists">
-              <Link className="navbar-list">For You</Link>
-              <Link className="navbar-list">Library</Link>
-              <Link className="navbar-list">Browse</Link>
-              <Link className="navbar-list">Radio</Link>
+            {/* <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <Close /> : <Menu />}
+          </button> */}
+            <ul>
+              <Link to={"/"} className="navbar-list">
+                Explore
+              </Link>
+              <Link className="navbar-list" to={"library"}>
+                Musics
+              </Link>
+              <Link className="navbar-list" to={"premium"}>
+                Premium
+              </Link>
+              <Link className="navbar-list">Selling</Link>
+              <Link to={"favorite"} className="navbar-list">
+                Favorites
+              </Link>
             </ul>
           </div>
-
           <div className="navbar-right">
-            <div className="navbar-search">
-              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <div className="searching">
               <input
-                type="text"
-                id="search"
-                placeholder="What do you want to play?"
+                type="search"
+                placeholder="Search music"
+                className="search"
+                value={searchItem}
+                onChange={(e)=>setSearchItem(e.target.value)}
               />
             </div>
-            <div className="explore">
-              <Link to={'/premium'}><button className="premium">Explore premium</button></Link>
-            </div>
-            <div className="search-bell">
-              <i class="fa-regular fa-bell bell"></i>
+            <button className="sign-in">
+              {" "}
+              <Link className="navbar-list" to={"register"}>
+                Sign In
+              </Link>
+            </button>
+            <div className="navbar-logo">
+              <span>InnerVibe</span>
             </div>
           </div>
         </div>

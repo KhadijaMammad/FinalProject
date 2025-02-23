@@ -1,0 +1,17 @@
+.artist-songs {
+  padding-top: 52px;
+  height: 100vh;
+}
+.carousel-container {
+  height: 380px;
+  max-width: 1200px;
+}
+.carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-image img {
+  width: 50%;
+  height: 400px;
+}

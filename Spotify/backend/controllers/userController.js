@@ -42,7 +42,7 @@ export let userController = {
         password: hashpassword,
       });
       await newUser.save();
-      res.send(newUser);
+     return res.send(newUser);
     }
   },
   login: async (req, res) => {
@@ -66,7 +66,7 @@ export let userController = {
           text: `Your confirmation code is: ${confirmCode}`,
         });
       }
-      res.send(user);
+     return res.send(user);
     }
   },
   confirm: async (req, res) => {
@@ -80,7 +80,7 @@ export let userController = {
         process.env.SECRET_KEY,
         {expiresIn: "1h"}
       );
-      res.send(`Bearer ${token}`);
+       return res.send(`Bearer ${token}`);
     }
   },
 };

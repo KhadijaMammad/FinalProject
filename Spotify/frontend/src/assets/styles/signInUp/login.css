@@ -1,74 +1,65 @@
-.login-logo{
-    padding: 15px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.login-page{
-  background-color: black;
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
-.login-heading{
-    color: white;
-    text-align: center;
-    padding: 5px;
-    font-size: 23px;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.login-heading {
+  width: 350px;
+  height: 160px;
+  color: white;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  left: 50%;
+  transform: translate(-50%);
+  align-items: center;
+  justify-content: center;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-image: linear-gradient(170deg, #fc267c, #212832);
+}
+#username,
+#password,
+#email {
+  color: white;
+  width: 270px;
+  position: relative;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid gray;
+  background-color: rgba(47, 59, 73);
 }
 .login-form {
-    margin-top: 20px;
+  margin-top: 40px;
 }
 .form-group {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  label{
-    font-size: 15px;
-    font-style: normal;
-    color: #ccc;
-  }
-  #username, #email, #password{
-    color: #ccc;
-    font-size: 14px;
-  }
-  
-  .form-control {
-    width: 25%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  .submit{
-    margin-top: 10px;
-    text-align: center;
-  }
-  
-  .submit-btn {
-    width: 27%;
-    padding: 10px;
-    background-color: #1db954;
-    color: black;
-    border: none;
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .submit-btn:hover {
-    background-color: #1aa34a;
-  }
-  
-  .error {
-    color: red;
-    font-size: 12px;
-  }
-  .redirect-to-register{
-    text-align: center;
-    margin-top: 2%;
-  }
+  margin-bottom: 25px;
+}
+.error {
+  color: red;
+  font-size: 12px;
+}
+.submit {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.suggest {
+  color: white;
+  text-align: center;
+}
+.submit-btn-login {
+  color: white;
+  font-weight: 500;
+  padding: 11px 50px;
+  border: none;
+  border-radius: 25px;
+  background-color: #fc267c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

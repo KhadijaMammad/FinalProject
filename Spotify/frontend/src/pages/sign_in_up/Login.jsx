@@ -1,9 +1,10 @@
-import React from 'react'
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import React from "react";
+import {Formik, Field, Form, ErrorMessage} from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import "../../assets/styles/signInUp/login.css";
+import {Link, useNavigate} from "react-router-dom";
 import '../../assets/styles/signInUp/login.css'
-import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -29,8 +30,8 @@ export default function Login() {
         password: values.password,
       });
       localStorage.setItem("token", response.data.token);
-      console.log("Login successful", response.data)
-      navigate("/home");
+      console.log("Login successful", response.data);
+      navigate("/library");
     } catch (error) {
       console.error("Login failed", error.response?.data || error.message);
     }
@@ -40,8 +41,7 @@ export default function Login() {
     <div className="container">
       <div className="login-page">
         <div className="login-heading">
-          <h1>Welcome back!</h1>
-          <p>Login to your account</p>
+          <h2>Log In</h2>
         </div>
         <div className="login-form">
           <Formik
@@ -51,7 +51,6 @@ export default function Login() {
           >
             <Form>
               <div className="form-group">
-                <label htmlFor="email">Email</label>
                 <Field
                   type="email"
                   id="email"
@@ -61,35 +60,37 @@ export default function Login() {
                 />
                 <ErrorMessage name="email" component="div" className="error" />
               </div>
-
               <div className="form-group">
-                <label htmlFor="password">Password</label>
                 <Field
                   type="password"
                   id="password"
                   name="password"
                   className="form-control"
-                  placeholder="******"
+                  placeholder="password"
                 />
-                <ErrorMessage name="password" component="div" className="error" />
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="error"
+                />
               </div>
-
+              <div className="suggest">
+                <p>
+                  Haven't account?{" "}
+                  <Link to={"/register"} style={{textDecoration: "none"}}>
+                    Sign up
+                  </Link>
+                </p>
+              </div>
               <div className="submit">
-                <button type="submit" className="submit-btn">Log in</button>
+                <button type="submit" className="submit-btn-login">
+                  Log in
+                </button>
               </div>
             </Form>
           </Formik>
         </div>
-        <div className="redirect-to-register">
-          <p style={{color:'white'}}>
-            Don't have an account?{" "}
-            <span className="register-link" onClick={() => navigate("/")} style={{color:'white'}}>
-              Sign up here
-            </span>
-          </p>
-        </div>
       </div>
     </div>
   );
-  
 }
