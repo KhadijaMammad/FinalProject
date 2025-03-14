@@ -7,23 +7,19 @@ import Songs from "./Songs";
 import { useNavigate } from "react-router-dom";
 import { MusicProvider} from "./MusicPlayer";
 import { AlbumContext } from "../../contexts/AlbumContext";
-import NewSidebar from "./NewSidebar";
-import { SearchContext } from "../../contexts/SearchContext";
+import SongPlayer from "./SongPlayer";
 
 export default function Library() {
   const {albums} = useContext(AlbumContext);
-  const {searchItem} = useContext(SearchContext);
   const navigate = useNavigate();
 
   const handleClick = (albumId) => {
     setTimeout(() => navigate(`/songs/${albumId}`), 100);
   };
 
-  const filteredAlbums = albums.filter((album)=>{
-    album.artist.toLowerCase().includes(searchItem.toLowerCase())
-  })
-
-
+  // const filteredAlbums = albums.filter((album)=>{
+  //   album.artist.toLowerCase().includes(searchItem.toLowerCase())
+  // })
 
   return (
     <>
@@ -32,10 +28,10 @@ export default function Library() {
           <Swiper
             modules={[Navigation, Autoplay]}
             spaceBetween={30}
-            slidesPerView={3}
-            //  loop={true}
+            slidesPerView={5}
+            loop={true}
             autoplay={{
-              delay: 2000,
+              delay: 1000,
             }}
             passiveListeners={false}
             className="swiper-container"
@@ -60,8 +56,7 @@ export default function Library() {
           </Swiper>
         </div>
         <Songs/>
-        <MusicProvider/>
-        <NewSidebar/>
+        {/* <SongPlayer/> */}
       </div>
       
     </>

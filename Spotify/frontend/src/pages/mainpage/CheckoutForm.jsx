@@ -7,7 +7,7 @@ export default function CheckoutForm() {
   const elements = useElements();
   const [clientSecret, setClientSecret] = useState("");
   useEffect(() => {
-    fetch("http://localhost:3001/create-payment-intent", {
+    fetch("http://localhost:3000/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,20 +41,33 @@ export default function CheckoutForm() {
     }
   };
 
+  function SweetAlert(){
+    Swal.fire({
+      title: 'Payment Successful!',
+      text: 'Your subscription has been successfully created.',
+      icon:'success',
+      confirmButtonText: 'Okay',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = '/';
+      }
+    })
+  }
+
   return (
     <form onSubmit={handleSubmit} className="checkout-form">
       <h2>Premium Subscription - 29.99 USD</h2>
 
       <label>
-        <span>Kart Nömrəsi</span>
+        <span>Card Number</span>
         <CardElement
           options={{
             style: {
               base: {
-                fontSize: "16px",
+                fontSize: "18px",
                 color: "#32325d",
                 letterSpacing: "0.025em",
-                padding: "10px",
+                padding: "15px",
                 backgroundColor: "#fff",
                 "::placeholder": {
                   color: "#aab7c4",
@@ -68,8 +81,8 @@ export default function CheckoutForm() {
         />
       </label>
 
-      <button type="submit" disabled={!stripe}>
-        Ödəniş et
+      <button type="submit" disabled={!stripe} onClick={()=>SweetAlert()}>
+        Pay
       </button>
     </form>
   );

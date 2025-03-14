@@ -19,7 +19,7 @@ export default function PremiumCard() {
         <div className="premium-card-section">
           <div className="premium-card-container">
             {premium.map((item)=>(
-                <div key={item.id} className="premium-card">
+                <div key={item._id} className="premium-card">
                 <div className="card-body">
                   <h4 className="card-heading">{item.heading}</h4>
                   <h1 className="card-name">{item.name}</h1>

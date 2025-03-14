@@ -1,34 +1,32 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from "react";
 
+export const WishlistContext = createContext();
 
-export let WishlistContext = createContext()
+export default function WishlistProvider({ children }) {
+  const localFavorite = JSON.parse(localStorage.getItem("favorite")) || [];
+  const [favorite, setFavorite] = useState(localFavorite);
 
-export default function WishlistProvider({children}) {
-    let localFavorite=JSON.parse(localStorage.getItem("favorite"))
-    let [favorite,setFavorite]=useState(localFavorite ? localFavorite :[])
+  useEffect(() => {
+    localStorage.setItem("favorite", JSON.stringify(favorite));
+  }, [favorite]);
 
-
-    useEffect(()=>{
-        localStorage.setItem("favorite",JSON.stringify(favorite))
-    },[favorite]);
-
-    function toggleWishlist(item) {
-        const itemIndex = favorite.findIndex((x) => x.id === item.id);
-        if (itemIndex === -1) {
-          setFavorite([...favorite, item]);
-          return
-        }
-        else {
-          setFavorite(favorite.filter(x => x.id !== item.id))
-        }
-    
+  function addToWishlist(item) {
+    setFavorite((prevFavorites) => {
+      const isExist = prevFavorites.some((x) => x._id === item._id);
+      if (!isExist) {
+        return [...prevFavorites, item]; 
       }
+      return prevFavorites;
+    });
+  }
+
+  function removeFromWishlist(itemId) {
+    setFavorite((prevFavorites) => prevFavorites.filter((x) => x._id !== itemId));
+  }
 
   return (
-    <>
-      <WishlistContext.Provider value={{favorite,setFavorite,toggleWishlist}}>
-        {children}
-      </WishlistContext.Provider>
-    </>
-  )
+    <WishlistContext.Provider value={{ favorite, addToWishlist, removeFromWishlist }}>
+      {children}
+    </WishlistContext.Provider>
+  );
 }

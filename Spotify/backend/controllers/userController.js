@@ -65,8 +65,12 @@ export let userController = {
           subject: "Confirm Your Email",
           text: `Your confirmation code is: ${confirmCode}`,
         });
+        console.log(info);
+
+        return res.send({user, info});
+        
       }
-     return res.send(user);
+     
     }
   },
   confirm: async (req, res) => {
@@ -80,6 +84,9 @@ export let userController = {
         process.env.SECRET_KEY,
         {expiresIn: "1h"}
       );
+
+      user.confirmPassword = null;
+      await user.save();
        return res.send(`Bearer ${token}`);
     }
   },

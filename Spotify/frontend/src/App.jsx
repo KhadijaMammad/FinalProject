@@ -11,32 +11,39 @@ import WishlistProvider from "./contexts/WishlistContext";
 import Favorite from "./pages/mainpage/Wishlist";
 import {MusicProvider} from "./pages/mainpage/MusicPlayer";
 import AlbumProvider from "./contexts/AlbumContext";
-import SearchProvider from "./contexts/SearchContext";
+import ArtistSongs from "./pages/mainpage/ArtistSongs";
+import AuthProvider from "./contexts/AuthContext";
 
 function App() {
   return (
     <>
-      <SearchProvider>
+      
         <AlbumProvider>
           <MusicProvider>
             <WishlistProvider>
-              <BrowserRouter>
-                <Routes>
-                  <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
-                    <Route path="premium" element={<Premium />} />
-                    <Route path="premiumpayment" element={<PremiumPayment />} />
-                    <Route path="library" element={<Library />} />
-                    <Route path="favorite" element={<Favorite />} />
-                  </Route>
-                  <Route path="register" element={<Register />} />
-                  <Route path="login" element={<Login />} />
-                </Routes>
-              </BrowserRouter>
+              <AuthProvider>
+               <BrowserRouter>
+                  <Routes>
+                    <Route path="/" element={<Layout />}>
+                      <Route index element={<Home />} />
+                      <Route path="premium" element={<Premium />} />
+                      <Route
+                        path="premiumpayment"
+                        element={<PremiumPayment />}
+                      />
+                      <Route path="library" element={<Library />} />
+                      <Route path="favorite" element={<Favorite />} />
+                      <Route path="songs/:albumId" element={<ArtistSongs />} />
+                    </Route>
+                    <Route path="register" element={<Register />} />
+                    <Route path="login" element={<Login />} />
+                  </Routes>
+                </BrowserRouter>
+              
+              </AuthProvider>
             </WishlistProvider>
           </MusicProvider>
         </AlbumProvider>
-      </SearchProvider>
     </>
   );
 }

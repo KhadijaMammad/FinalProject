@@ -6,11 +6,12 @@
 .home-image {
   display: flex;
   justify-content: flex-end;
-  /* height: 100vh; */
 }
 .home-img {
   width: 100%;
   height: 90vh;
+  object-fit: cover;
+  background-size: contain;
 }
 .home-text {
   width: 530px;

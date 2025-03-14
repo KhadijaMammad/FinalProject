@@ -1,0 +1,17 @@
+.music-player{
+    height: 60px;
+    width: 100%;
+    background-color: gray;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.controls{
+    color: white;
+}
+.prev{
+    font-size: 2rem;
+    cursor: pointer;
+}

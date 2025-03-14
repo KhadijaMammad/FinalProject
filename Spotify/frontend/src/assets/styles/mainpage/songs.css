@@ -3,6 +3,7 @@
   border-radius: 8px;
   background-color: rgb(45, 53, 64);
   margin-top: 15px;
+  /* padding-bottom: 71px; */
 }
 .song-album {
   display: flex;
@@ -45,13 +46,8 @@
   border-radius: 5px;
   justify-content: center;
   align-items: center;
-  z-index: 99999;
-  /* display: none; */
 }
 .fav-icon, .add-icon{
   font-size: large;
-  color: #fc267c;
+  color: white;
 }
-/* .song-item:hover .song-icon{
-  display: inline-block;
-} */
